@@ -3,7 +3,7 @@ import type { NextPage } from 'next'
 const Home: NextPage = () => {
   return (
     // <div className='bg-slate-400 py-10 px-5 flex-col space-y-5'>
-    <div className="bg-slate-400 py-20 px-20 grid gap-10">
+    <div className="bg-slate-400 py-20 px-20 grid gap-10 min-h-screen">
       <div className="bg-white p-6 rounded-3xl shadow-xl">
         <span className="font-semibold text-3xl">Select Item</span>
         <div className="flex justify-between my-2">
@@ -47,8 +47,36 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <div className="bg-white p-10 rounded-2xl shadow-xl"></div>
-      <div className="bg-white p-10 rounded-2xl shadow-xl"></div>
+      <div className="bg-white p-6 rounded-3xl shadow-xl">
+        <div className="flex mb-5 justify-between items-center">
+          <span>⬅</span>
+          <div className="space-x-3">
+            <span>⭐4.9</span>
+            <span className="shadow-xl p-2 rounded-md ">💖</span>
+          </div>
+        </div>
+        <div />
+        <div>
+          <span>Swoon Lounge</span>
+          <span>Chair</span>
+          <div>
+            <div>
+              <input type="radio" />
+              <input type="radio" />
+              <input type="radio" />
+            </div>
+            <div>
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+          </div>
+          <div>
+            <span>$450</span>
+            <button>Add to cart</button>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
