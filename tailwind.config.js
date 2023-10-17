@@ -6,5 +6,6 @@ module.exports = {
   theme: {
     extend: {},
   },
+  darkMode: 'class', //media: 브라우저 설정을 따라간다
   plugins: [],
 }
