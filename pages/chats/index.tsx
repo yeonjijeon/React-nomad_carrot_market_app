@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 
-const Charts: NextPage = () => {
+const Chats: NextPage = () => {
   return (
     <div className="py-10 divide-y-[1px]">
       {new Array(7).fill(1).map((_, i) => (
@@ -18,4 +18,4 @@ const Charts: NextPage = () => {
   )
 }
 
-export default Charts
+export default Chats
