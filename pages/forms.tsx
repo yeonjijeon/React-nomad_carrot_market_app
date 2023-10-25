@@ -1,23 +1,24 @@
-import React, { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { FieldErrors, useForm } from 'react-hook-form'
 
 interface LoginForm {
   username: string
   password: string
   email: string
+  errors?: string
 }
 
-export default function Form() {
+export default function Forms() {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<LoginForm>({
-    mode: 'onBlur',
+    mode: 'onChange',
   })
-  const onValid = (data: LoginForm) => {}
-
-  const onInvalid = (errors: any) => {
+  const onValid = (data: LoginForm) => {
+    console.log('im valid bby')
+  }
+  const onInvalid = (errors: FieldErrors) => {
     console.log(errors)
   }
 
@@ -34,27 +35,26 @@ export default function Form() {
         type="text"
         placeholder="Username"
       />
+      {errors.username?.message}
       <input
         {...register('email', {
-          required: 'email is required',
+          required: 'Email is required',
           validate: {
             notGmail: (value) =>
-              !value.includes('@gmail.com') ? '' : 'Gmail is not allowed',
+              !value.includes('@gmail.com') || 'Gmail is not allowed',
           },
         })}
         type="email"
-        placeholder="email"
-        className={`${Boolean(errors.email)}` ? 'border-red-300' : ''}
+        placeholder="Email"
       />
       {errors.email?.message}
       <input
-        {...register('password', {
-          required: 'password is required',
-        })}
+        {...register('password', { required: 'Password is required' })}
         type="password"
-        placeholder="password"
+        placeholder="Password"
       />
       <input type="submit" value="Create Account" />
+      {errors.errors?.message}
     </form>
   )
 }
