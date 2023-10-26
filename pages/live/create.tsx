@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
-import Button from '../../components/button'
-import Input from '../../components/input'
-import Layout from '../../components/layout'
-import TextArea from '../../components/textarea'
+import Button from '@components/button'
+import Input from '@components/input'
+import Layout from '@components/layout'
+import TextArea from '@components/textarea'
 
 const Create: NextPage = () => {
   return (
@@ -12,7 +12,7 @@ const Create: NextPage = () => {
         <Input
           required
           label="Price"
-          placeholder="0.00"
+          // placeholder="0.00"
           name="price"
           type="text"
           kind="price"
