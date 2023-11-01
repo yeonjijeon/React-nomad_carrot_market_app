@@ -11,7 +11,7 @@ async function handler(
   res: NextApiResponse<ResponseType>
 ) {
   const { phone, email } = req.body
-  const user = phone ? { phone: +phone } : email ? { email } : null
+  const user = phone ? { phone } : email ? { email } : null
   if (!user) {
     return res.json({ ok: false })
   }
@@ -73,4 +73,8 @@ async function handler(
   })
 }
 
-export default withHandler('POST', handler)
+export default withHandler({
+  method: 'POST',
+  handler: handler,
+  isPrivate: false,
+})
